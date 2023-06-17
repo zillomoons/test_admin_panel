@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import {
   Form,
-  Avatar,
+  // Avatar,
   Button,
   Input,
   DatePicker,
   Row,
   Col,
   message,
-  Upload,
+  // Upload,
 } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+// import { UserOutlined } from '@ant-design/icons';
 import { ROW_GUTTER } from 'constants/ThemeConstant';
 import Flex from 'components/shared-components/Flex';
 import { withRouter } from 'react-router-dom/cjs/react-router-dom';
@@ -66,27 +66,27 @@ export class EditProfile extends Component {
       console.log('Failed:', errorInfo);
     };
 
-    const onUploadAavater = (info) => {
-      const key = 'updatable';
-      if (info.file.status === 'uploading') {
-        message.loading({ content: 'Uploading...', key, duration: 1000 });
-        return;
-      }
-      if (info.file.status === 'done') {
-        this.getBase64(info.file.originFileObj, (imageUrl) =>
-          this.setState({
-            avatarUrl: imageUrl,
-          })
-        );
-        message.success({ content: 'Uploaded!', key, duration: 1.5 });
-      }
-    };
+    // const onUploadAavater = (info) => {
+    //   const key = 'updatable';
+    //   if (info.file.status === 'uploading') {
+    //     message.loading({ content: 'Uploading...', key, duration: 1000 });
+    //     return;
+    //   }
+    //   if (info.file.status === 'done') {
+    //     this.getBase64(info.file.originFileObj, (imageUrl) =>
+    //       this.setState({
+    //         avatarUrl: imageUrl,
+    //       })
+    //     );
+    //     message.success({ content: 'Uploaded!', key, duration: 1.5 });
+    //   }
+    // };
 
-    const onRemoveAvater = () => {
-      this.setState({
-        avatarUrl: '',
-      });
-    };
+    // const onRemoveAvater = () => {
+    //   this.setState({
+    //     avatarUrl: '',
+    //   });
+    // };
 
     const {
       name,
@@ -98,7 +98,7 @@ export class EditProfile extends Component {
       address,
       city,
       postcode,
-      avatarUrl,
+      // avatarUrl,
     } = this.state;
 
     return (
@@ -108,7 +108,7 @@ export class EditProfile extends Component {
           mobileFlex={false}
           className='text-center text-md-left'
         >
-          <Avatar size={90} src={avatarUrl} icon={<UserOutlined />} />
+          {/* <Avatar size={90} src={avatarUrl} icon={<UserOutlined />} />
           <div className='ml-md-3 mt-md-0 mt-3'>
             <Upload
               onChange={onUploadAavater}
@@ -120,7 +120,7 @@ export class EditProfile extends Component {
             <Button className='ml-2' onClick={onRemoveAvater}>
               Remove
             </Button>
-          </div>
+          </div> */}
         </Flex>
         <div className='mt-4'>
           <Form
