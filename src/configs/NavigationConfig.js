@@ -1,0 +1,206 @@
+import {
+  DashboardOutlined,
+  ShoppingCartOutlined,
+  ShoppingOutlined,
+  UserOutlined,
+  TeamOutlined,
+  SettingOutlined,
+  ProfileOutlined,
+  MobileOutlined,
+  MailOutlined,
+  ShopOutlined,
+  GiftOutlined,
+  PictureOutlined,
+} from '@ant-design/icons';
+import { APP_PREFIX_PATH } from 'configs/AppConfig';
+
+const dashBoardNavTree = [
+  {
+    key: 'dashboards',
+    path: `${APP_PREFIX_PATH}/dashboards`,
+    title: 'sidenav.dashboard',
+    icon: DashboardOutlined,
+    breadcrumb: false,
+    submenu: [
+      {
+        key: 'dashboards-default',
+        path: `${APP_PREFIX_PATH}/dashboards/default`,
+        title: 'sidenav.dashboard.default',
+        icon: DashboardOutlined,
+        breadcrumb: false,
+        submenu: [],
+      },
+      {
+        key: 'dashboards-ecommerce',
+        path: `${APP_PREFIX_PATH}/dashboards/ecommerce`,
+        title: 'sidenav.dashboard.ecommerce',
+        icon: ShoppingCartOutlined,
+        breadcrumb: true,
+        submenu: [
+          {
+            key: 'dashboards-ecommerce-productList',
+            path: `${APP_PREFIX_PATH}/dashboards/ecommerce/product-list`,
+            title: 'sidenav.dashboard.ecommerce.productList',
+            icon: '',
+            breadcrumb: true,
+            submenu: [],
+          },
+          {
+            key: 'dashboards-ecommerce-category',
+            path: `${APP_PREFIX_PATH}/dashboards/ecommerce/category`,
+            title: 'sidenav.dashboard.ecommerce.category',
+            icon: '',
+            breadcrumb: false,
+            submenu: [],
+          },
+          {
+            key: 'dashboards-ecommerce-collection',
+            path: `${APP_PREFIX_PATH}/dashboards/ecommerce/collection`,
+            title: 'sidenav.dashboard.ecommerce.collection',
+            icon: '',
+            breadcrumb: false,
+            submenu: [],
+          },
+          {
+            key: 'dashboards-ecommerce-combo',
+            path: `${APP_PREFIX_PATH}/dashboards/ecommerce/combo`,
+            title: 'sidenav.dashboard.ecommerce.combo',
+            icon: '',
+            breadcrumb: false,
+            submenu: [],
+          },
+        ],
+      },
+      {
+        key: 'dashboards-orders',
+        path: `${APP_PREFIX_PATH}/dashboards/orders`,
+        title: 'sidenav.dashboard.orders',
+        icon: ShoppingOutlined,
+        breadcrumb: false,
+        submenu: [],
+      },
+      {
+        key: 'dashboards-clients',
+        path: `${APP_PREFIX_PATH}/dashboards/clients`,
+        title: 'sidenav.dashboard.clients',
+        icon: UserOutlined,
+        breadcrumb: false,
+        submenu: [
+          {
+            key: 'dashboards-clients-clientList',
+            path: `${APP_PREFIX_PATH}/dashboards/clients/client-list`,
+            title: 'sidenav.dashboard.clients.list',
+            icon: '',
+            breadcrumb: true,
+            submenu: [],
+          },
+          {
+            key: 'dashboards-clients-clientGroup',
+            path: `${APP_PREFIX_PATH}/dashboards/clients/client-group`,
+            title: 'sidenav.dashboard.clients.group',
+            icon: '',
+            breadcrumb: false,
+            submenu: [],
+          },
+        ],
+      },
+      {
+        key: 'dashboards-banners',
+        path: `${APP_PREFIX_PATH}/dashboards/banners`,
+        title: 'sidenav.dashboard.banners',
+        icon: PictureOutlined,
+        breadcrumb: false,
+        submenu: [],
+      },
+      {
+        key: 'dashboards-promo',
+        path: `${APP_PREFIX_PATH}/dashboards/promo`,
+        title: 'sidenav.dashboard.promo',
+        icon: GiftOutlined,
+        breadcrumb: false,
+        submenu: [],
+      },
+      {
+        key: 'dashboards-stores',
+        path: `${APP_PREFIX_PATH}/dashboards/stores`,
+        title: 'sidenav.dashboard.stores',
+        icon: ShopOutlined,
+        breadcrumb: false,
+        submenu: [
+          {
+            key: 'dashboards-stores-addresses',
+            path: `${APP_PREFIX_PATH}/dashboards/stores/addresses`,
+            title: 'sidenav.dashboard.stores.addresses',
+            icon: '',
+            breadcrumb: true,
+            submenu: [],
+          },
+          {
+            key: 'dashboards-stores-geofences',
+            path: `${APP_PREFIX_PATH}/dashboards/stores/geofences`,
+            title: 'sidenav.dashboard.stores.geofences',
+            icon: '',
+            breadcrumb: false,
+            submenu: [],
+          },
+        ],
+      },
+      {
+        key: 'dashboards-employees',
+        path: `${APP_PREFIX_PATH}/dashboards/employees`,
+        title: 'sidenav.dashboard.employees',
+        icon: TeamOutlined,
+        breadcrumb: false,
+        submenu: [],
+      },
+      {
+        key: 'dashboards-mail',
+        path: `${APP_PREFIX_PATH}/dashboards/mail`,
+        title: 'sidenav.dashboard.mail',
+        icon: MailOutlined,
+        breadcrumb: false,
+        submenu: [],
+      },
+    ],
+  },
+];
+
+const docsNavTree = [
+  {
+    key: 'docs',
+    path: `${APP_PREFIX_PATH}/docs`,
+    title: 'sidenav.system',
+    icon: '',
+    breadcrumb: false,
+    submenu: [
+      {
+        key: 'docs-setting',
+        path: `${APP_PREFIX_PATH}/docs/setting`,
+        title: 'sidenav.system.setting',
+        icon: SettingOutlined,
+        breadcrumb: false,
+        submenu: [],
+      },
+      {
+        key: 'docs-mobile',
+        path: `${APP_PREFIX_PATH}/docs/mobile`,
+        title: 'sidenav.system.mobile',
+        icon: MobileOutlined,
+        breadcrumb: false,
+        submenu: [],
+      },
+      {
+        key: 'docs-changelog',
+        path: `${APP_PREFIX_PATH}/docs/changelog`,
+        title: 'sidenav.system.changelog',
+        icon: ProfileOutlined,
+        breadcrumb: false,
+        submenu: [],
+      },
+    ],
+  },
+];
+
+const navigationConfig = [...dashBoardNavTree, ...docsNavTree];
+
+export default navigationConfig;
